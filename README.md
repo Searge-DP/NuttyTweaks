@@ -1,27 +1,30 @@
-#A Base to Build From!
+#Tweaks Galore!
 
-Comes with most basic requirements for a mod.
+Similar to TPPI-Tweaks, this mod brings tweaks and balances (all configurable) to my own custom packs. 
 
-This is simply a base for people to build from and includes no content, aside from a few example recipes. 
+As it's a bit less directed towards TPPI, it may be useful to other pack developers.
 
-My hope is that it is simple to understand and easy to use.
+##Requirements:
 
-##How to use:
+__This mod requires [RecipeTweakingCore](http://ci.tterrag.com/job/RecipeTweakingCore/) and [ttCore](http://ci.tterrag.com/job/ttCore/) by tterrag.__
 
-1. Clone that repository using any Git client. (alternatively, download the zip)
-2. Setup your Gradle workspace. I suggest following [this](https://www.youtube.com/watch?v=8VEdtQLuLO0) tutorial by LexManos. I also suggest running "setupDecompWorkspace" instead of "setupDevWorkspace". Look in gradlew for what everything does.
-3. Open it up in your IDE and refactor everything. 
-
-       EG: BaseMod.java -> YourModName.java
-      
-4. Write the content of your mod.
-5. Release to your loving fans and hope you didn't screw anything up.
-
-I *do not* require any credit for this. I wrote it primarily for myself to use in my own mods and there's literally no reason for it to not be public.
+I *do not* require any credit for this. I wrote it primarily for myself to use in my own packs and there's literally no reason for it to not be public.
 
 ##Suggestions or Feedback?
 
 [Join my channel](https://webchat.esper.net/?channels=tehnut) (#TehNut) on [Espernet](https://www.esper.net/) and discuss there.
+
+##Developement setup:
+
+In order to set this up in a dev environment, you need to get a Deobfuscated version of each of the following mods:
+
+* [Dark Menagerie](http://minecraft.curseforge.com/mc-mods/224039-dark-menagerie)
+* [Extra Utilities](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/1443963-extra-utilities-v1-1-0k)
+* [Gravestones](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1288082-gravestone-mod-v2-9-7)
+* [Magical Crops](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1287451-magical-crops-farm-your-resources-3-2-0-now-with)
+* [Tinker's Construct](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2218638-tinkers-construct)
+
+Even if you don't plan to dev for X mod or even use it in your pack, the dev enviro needs it.
 
 ##FAQ:
 
@@ -31,15 +34,11 @@ I *do not* require any credit for this. I wrote it primarily for myself to use i
 
 * __Can you include X feature?__
    
-   Possibly. I don't want to do all the work for modders, and I don't want this to become a coremod/dependency.
+   Sure why not.
 
 * __Why should I use this?__
    
    I feel it saves time for beginning modders so they don't have to rewrite everything whenever they start a new project. If you don't feel it's useful, don't use it. Simple as that.
-
-* __Can you port to Minecraft 1.X.X?__ 
-   
-   Sure, why not. However, most of this will work in all versions. One large exception being the config GUI.
 
 * __Who the heck are you?__
   
@@ -47,16 +46,6 @@ I *do not* require any credit for this. I wrote it primarily for myself to use i
 
    I also work on rewriting mods (Completely fresh code-base, custom textures, new names, etc) to balance them. BigReactors ([NuclearCubes](https://github.com/TehNut/NuclearCubes)) being a huge one. 
 
-   Occasionally, I help out [Tombenpotter](https://github.com/Tombenpotter) with Electro-Magic Tools. (Mostly just localizations)
+   I help out (More like rewrite his mods) [Tombenpotter](https://github.com/Tombenpotter) with Electro-Magic Tools and Sanguimancy.
 
-   I am also the newest TPPI dev.
-   
-##Additional Tips:
-   
-* __How to update the Forge version-__
-	
-	View [this](http://www.minecraftforge.net/forum/index.php?topic=14048.0#post_update_forge) forum post for information on that.
-	
-* __How to update the ForgeGradle version-__
-	
-	View [this](http://www.minecraftforge.net/forum/index.php?topic=14048.0#post_update_forgegradle) forum post for information on that.
+   I am one of the developers of the TPPI (TestPackPleaseIgnore) modpack. It is public on both the FTB and Technic launchers.
