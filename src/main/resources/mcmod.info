@@ -1,0 +1,16 @@
+[
+{
+  "modid": "nuttytweaks",
+  "name": "NuttyTweaks",
+  "description": "Nut's custom pack tweaks",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["TehNut"],
+  "credits": "tterrag for RecipeTweakingCore and ttCore",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
