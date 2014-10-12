@@ -9,12 +9,12 @@ import main.nuttytweaks.blocks.BlockRecipeRegistry;
 import main.nuttytweaks.blocks.BlockRegistry;
 import main.nuttytweaks.client.gui.CreativeTabNuttyTweaks;
 import main.nuttytweaks.proxies.CommonProxy;
-import main.nuttytweaks.util.EventHandler;
 import main.nuttytweaks.util.OreDictHandler;
+import main.nuttytweaks.util.TextHelper;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import tterrag.core.common.Handlers;
 import tterrag.rtc.RecipeTweakingCore;
 
 @Mod(modid = ModInformation.ID, name = ModInformation.NAME, version = ModInformation.VERSION, dependencies = ModInformation.DEPEND, guiFactory = ModInformation.GUIFACTORY)
@@ -37,9 +37,9 @@ public class NuttyTweaks {
 		BlockRecipeRegistry.registerBlockRecipes();
 		OreDictHandler.registerOreDict();
 
+		logger.info(TextHelper.localize("info." + ModInformation.ID + ".console.tweaks.dotweaks"));
+		Handlers.addPackage("main.nuttytweaks.util.events");
 		RecipeTweakingCore.registerPackageName("main.nuttytweaks.modtweaks");
-		MinecraftForge.EVENT_BUS.register(new EventHandler());
-
 	}
 
 	@Mod.EventHandler

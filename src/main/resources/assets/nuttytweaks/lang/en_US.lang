@@ -8,4 +8,6 @@ gui.nuttytweaks.config.title=Nutty Tweaks Configuration
 tile.nuttytweaks.block.netherstar.name=Nether Star Block
 
 #CONSOLE LOG
-info.basemod.console.config.refresh=Refreshing configuration file.
+info.nuttytweaks.console.config.refresh=Refreshing configuration file.
+
+info.nuttytweaks.console.tweaks.dotweaks=Registering tweaks.
