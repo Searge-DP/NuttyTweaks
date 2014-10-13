@@ -1,4 +1,4 @@
-#Tweaks Galore!
+#Tweaks Galore! [![Build Status](http://tehnut.info/jenkins/job/NuttyTweaks/badge/icon)](http://tehnut.info/jenkins/job/NuttyTweaks/)
 
 Similar to TPPI-Tweaks, this mod brings tweaks and balances (all configurable) to my own custom packs. 
 
