@@ -1,35 +1,23 @@
 package main.nuttytweaks.client.gui;
 
-import cpw.mods.fml.client.config.GuiConfig;
-import cpw.mods.fml.client.config.IConfigElement;
-import main.nuttytweaks.ModInformation;
+import main.nuttytweaks.ConfigHandler;
 import main.nuttytweaks.util.TextHelper;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraftforge.common.config.ConfigCategory;
-import net.minecraftforge.common.config.ConfigElement;
+import tterrag.core.api.common.config.IConfigHandler;
+import tterrag.core.client.config.BaseConfigGui;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static main.nuttytweaks.ConfigHandler.*;
-
-public class ConfigGui extends GuiConfig {
-
+public class ConfigGui extends BaseConfigGui {
 	public ConfigGui(GuiScreen parentScreen) {
-		super(parentScreen, getConfigElements(parentScreen), ModInformation.ID, false, false, TextHelper.localize("gui." + ModInformation.ID + ".config.title"));
+		super(parentScreen);
 	}
 
-	@SuppressWarnings("rawtypes")
-	private static List<IConfigElement> getConfigElements(GuiScreen parent) {
-		List<IConfigElement> list = new ArrayList<IConfigElement>();
+	@Override
+	protected IConfigHandler getConfigHandler() {
+		return ConfigHandler.INSTANCE;
+	}
 
-		// adds sections declared in ConfigHandler. toLowerCase() is used because the configuration class automatically does this, so must we.
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(exUTweaks.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(tiCoTweaks.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(gravestoneTweaks.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(menagerieTweaks.toLowerCase())));
-		list.add(new ConfigElement<ConfigCategory>(config.getCategory(mCropsTweaks.toLowerCase())));
-
-		return list;
+	@Override
+	protected String getTitle() {
+		return TextHelper.localize("config.nuttytweaks.title");
 	}
 }

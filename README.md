@@ -23,6 +23,7 @@ In order to set this up in a dev environment, you need to get a Deobfuscated ver
 * [Gravestones](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1288082-gravestone-mod-v2-9-7)
 * [Magical Crops](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1287451-magical-crops-farm-your-resources-3-2-0-now-with)
 * [Tinker's Construct](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2218638-tinkers-construct)
+* [Biomes O' Plenty](http://files.minecraftforge.net/BiomesOPlenty/)
 
 Even if you don't plan to dev for X mod or even use it in your pack, the dev enviro needs it.
 

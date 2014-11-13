@@ -31,7 +31,7 @@ public class NuttyTweaks {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		ConfigHandler.init(event.getSuggestedConfigurationFile());
+		ConfigHandler.INSTANCE.initialize(event.getSuggestedConfigurationFile());
 
 		BlockRegistry.registerBlocks();
 		BlockRecipeRegistry.registerBlockRecipes();

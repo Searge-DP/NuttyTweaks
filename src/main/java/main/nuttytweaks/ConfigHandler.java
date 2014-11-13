@@ -1,50 +1,65 @@
 package main.nuttytweaks;
 
-/*
- * Creation and usage of the config file.
- */
+import tterrag.core.common.config.AbstractConfigHandler;
 
-import net.minecraftforge.common.config.Configuration;
+public class ConfigHandler extends AbstractConfigHandler {
 
-import java.io.File;
+	public static final ConfigHandler INSTANCE = new ConfigHandler();
 
-public class ConfigHandler {
-
-	public static Configuration config;
-
-	// Sections to add to the config
-	public static String tiCoTweaks = "Tinker's Construct";
-	public static String exUTweaks = "ExtraUtilities";
-	public static String mCropsTweaks = "Magical Crops";
-	public static String gravestoneTweaks = "Gravestones";
-	public static String menagerieTweaks = "Dark Menagerie";
-
-	// Options in the config
-	public static boolean nerfAngelRings;
-	public static boolean addGreenHeartRecipe;
-	public static boolean removeT4EssenceArmorRecipe;
-	public static boolean nerfGSSpawnerRecipes;
-	public static boolean addDarkMenagerieMobDrops;
-
-	public static void init(File file) {
-		config = new Configuration(file);
-
-		loadConfig();
-		syncConfig();
+	private ConfigHandler() {
+		super(ModInformation.ID);
 	}
 
-	public static void loadConfig() {
-		config.load();
+	// Categories
+	public static final String tiCoTweaks = "tinker's construct";
+	public static final String exUTweaks = "extrautilities";
+	public static final String mCropsTweaks = "magical crops";
+	public static final String gravestoneTweaks = "gravestones";
+	public static final String menagerieTweaks = "dark menagerie";
+	public static final String bopTweaks = "biomes o' plenty";
+
+	// Options
+	public static boolean nerfAngelRings= true;
+	public static boolean addGreenHeartRecipe = true;
+	public static boolean removeT4EssenceArmorRecipe = true;
+	public static boolean nerfGSSpawnerRecipes = true;
+	public static boolean addDarkMenagerieMobDrops = true;
+	public static boolean disableBoPMudPickaxe = true;
+
+	@Override
+	protected void init() {
+		addSection(tiCoTweaks, tiCoTweaks, "Tweaks to Tinker's Construct");
+		addSection(exUTweaks, exUTweaks, "Tweaks to Extra Utilities");
+		addSection(mCropsTweaks, mCropsTweaks, "Tweaks to Magical Crops");
+		addSection(gravestoneTweaks, gravestoneTweaks, "Tweaks to Gravestones");
+		addSection(menagerieTweaks, menagerieTweaks, "Tweaks to Dark Menagerie");
+		addSection(bopTweaks, bopTweaks, "Tweaks to Biomes O' Plenty");
 	}
 
-	public static void syncConfig() {
+	@Override
+	protected void reloadNonIngameConfigs() {
 
-		nerfAngelRings = config.get(exUTweaks, "nerfAngelRings", true, "Make the Angel Rings expensive to match other mod's flight abilities.").getBoolean(nerfAngelRings);
-		addGreenHeartRecipe = config.get(tiCoTweaks, "addGreenHeartRecipe", true, "Add recipes for green hearts and cannisters.").getBoolean(addGreenHeartRecipe);
-		removeT4EssenceArmorRecipe = config.get(mCropsTweaks, "removeT4EssenceArmorRecipe", true, "Remove Tier 4 Essence Armor recipe.").getBoolean(removeT4EssenceArmorRecipe);
-		nerfGSSpawnerRecipes = config.get(gravestoneTweaks, "nerfGSSpawnerRecipes", true, "Makes recipe require a Nether Star.").getBoolean(nerfGSSpawnerRecipes);
-		addDarkMenagerieMobDrops = config.get(menagerieTweaks, "addDarkMenagerieMobDrops", true, "The mobs are interesting but some don't drop anything. This fixes that.").getBoolean(true);
+		activateSection(exUTweaks);
+		nerfAngelRings = getValue("nerfAngelRings", "Make the Angel Rings expensive to match other mod's flight abilities.", nerfAngelRings, RestartReqs.REQUIRES_MC_RESTART);
 
-		config.save();
+		activateSection(tiCoTweaks);
+		addGreenHeartRecipe = getValue("addGreenHeartRecipe", "Add recipes for green hearts and cannisters.", addGreenHeartRecipe, RestartReqs.REQUIRES_MC_RESTART);
+
+		activateSection(mCropsTweaks);
+		removeT4EssenceArmorRecipe = getValue("removeT4EssenceArmorRecipe", "Remove Tier 4 Essence Armor recipe.", removeT4EssenceArmorRecipe, RestartReqs.REQUIRES_MC_RESTART);
+
+		activateSection(gravestoneTweaks);
+		nerfGSSpawnerRecipes = getValue("nerfGSSpawnerRecipes", "Makes recipe require a Nether Star.", nerfGSSpawnerRecipes, RestartReqs.REQUIRES_MC_RESTART);
+
+		activateSection(menagerieTweaks);
+		addDarkMenagerieMobDrops = getValue("addDarkMenagerieMobDrops", "The mobs are interesting but some don't drop anything. This fixes that.", addDarkMenagerieMobDrops, RestartReqs.REQUIRES_MC_RESTART);
+
+		activateSection(bopTweaks);
+		disableBoPMudPickaxe = getValue("disableBoPMudPickaxe", "Disables the Mud Pickaxe from Biomes O' Plenty which has an exploit when combined with Iguana's Tweaks.", disableBoPMudPickaxe, RestartReqs.REQUIRES_MC_RESTART);
+	}
+
+	@Override
+	protected void reloadIngameConfigs() {
+		// Do stuff
 	}
 }

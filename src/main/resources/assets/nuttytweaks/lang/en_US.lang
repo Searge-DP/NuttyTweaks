@@ -1,13 +1,11 @@
 #CREATIVE TAB
 itemGroup.nuttytweaks.creativeTab=NuttyTweaks
 
-#CONFIG GUI
-gui.nuttytweaks.config.title=Nutty Tweaks Configuration
-
 #BLOCKS
 tile.nuttytweaks.block.netherstar.name=Nether Star Block
 
 #CONSOLE LOG
-info.nuttytweaks.console.config.refresh=Refreshing configuration file.
-
 info.nuttytweaks.console.tweaks.dotweaks=Registering tweaks.
+
+#CONFIG
+config.nuttytweaks.title=NuttyTweaks Configuration
